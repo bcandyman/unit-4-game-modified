@@ -2,6 +2,12 @@ body{
     background-image: url("../images/subtle_orange_emboss.png");
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: bold;
+    /* padding: 20px;  */
+    /* margin: 10px; */
+}
+
+.row{
+    margin-bottom: 10px;
 }
 
 .container{
@@ -33,7 +39,7 @@ body{
 .instructions{
     background-color: bisque;
     color: green;
-    padding: 30px 0px 50px 0px;
+    padding: 30px 10px 50px 10px;
 }
 
 .score{
@@ -57,12 +63,14 @@ body{
  background-color: orange;
  display: inline-block;
  color: white;
- padding: 20px 0px;
+ padding: 20px 10px;
 }
 
 .win-lose-record{
     background-color: aqua;
+    color: teal;
     display: inline-block;
     height: 125px;
+    margin-left: 10px;
     width: 80px;
 }
