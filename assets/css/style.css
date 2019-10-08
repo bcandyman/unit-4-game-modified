@@ -1,0 +1,10 @@
+body{
+    background-image: url("../images/subtle_orange_emboss.png");
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.title{
+ background-color: orange;
+ color: white;
+ padding: 20px 0px;
+}
