@@ -3,8 +3,19 @@ body{
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+.container{
+    max-width: 600px;
+}
+
+.instructions{
+    background-color: bisque;
+    color: green;
+    padding: 30px 0px 50px 0px;
+}
+
 .title{
  background-color: orange;
+ display: inline-block;
  color: white;
  padding: 20px 0px;
 }
