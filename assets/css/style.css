@@ -8,6 +8,28 @@ body{
     max-width: 500px;
 }
 
+.gem-blue{
+    background-image: url("../images/gem-blue.png")
+}
+
+.gem-green{
+    background-image: url("../images/gem-green.png")
+}
+
+.gem-red{
+    background-image: url("../images/gem-red.png")
+}
+
+.gem-tile{
+    background-color: white;
+    height: 100px;
+    width: 100px;
+}
+
+.gem-yellow{
+    background-image: url("../images/gem-yellow.png")
+}
+
 .instructions{
     background-color: bisque;
     color: green;
@@ -15,10 +37,13 @@ body{
 }
 
 .score{
-    background-color: aqua;
-    display: inline-block;
+    background-color: lightseagreen;
+    color: white;
+    width: 250px;
+}
+
+.score-total{
     height: 125px;
-    width: 80px;
 }
 
 .target{
@@ -33,4 +58,11 @@ body{
  display: inline-block;
  color: white;
  padding: 20px 0px;
+}
+
+.win-lose-record{
+    background-color: aqua;
+    display: inline-block;
+    height: 125px;
+    width: 80px;
 }
