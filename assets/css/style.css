@@ -2,8 +2,6 @@ body{
     background-image: url("../images/subtle_orange_emboss.png");
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: bold;
-    /* padding: 20px;  */
-    /* margin: 10px; */
 }
 
 .row{
@@ -48,22 +46,29 @@ body{
     width: 250px;
 }
 
+.score-note{
+    padding: 0px 10px;
+}
+
 .score-total{
     height: 125px;
+    padding: 0px 10px;
 }
 
 .target{
-    background-color: green;
+    background-color: mediumseagreen;
+    color: rebeccapurple;
     display: inline-block;
     height: 125px;
+    padding: 0px 10px;
     width: 250px;
 }
 
 .title{
- background-color: orange;
- display: inline-block;
- color: white;
- padding: 20px 10px;
+    background-color: orange;
+    display: inline-block;
+    color: white;
+    padding: 20px 10px;
 }
 
 .win-lose-record{
@@ -72,5 +77,6 @@ body{
     display: inline-block;
     height: 125px;
     margin-left: 10px;
-    width: 80px;
+    padding: 20px 10px 0 10px;
+    width: 100px;
 }
