@@ -28,7 +28,6 @@ function randomizeGemValues(min, max){
 //This function determines if the player wins or loses.
 function calculateUserScore(value){
     userScore+= value
-    console.log(userScore)
     $(".score-total").text(userScore)
     if(userScore===targetScore){
         wins++
@@ -62,22 +61,18 @@ $("#loses").text(loses);
 
 
 ///////////Event Handling//////////
-$(".gem-button-red").on("click",function(){
-    console.log("Red Button Clicked!!")
-    calculateUserScore(gemValues.red)
+$("#btn-info-flyout").on("click", function(){
+    var flyoutDiv = $("<div>")
+    flyoutDiv.addClass("flyout instructions")
+    flyoutDiv.html($("<p>").text("You will be given a random number at the start of the game."))
+    flyoutDiv.append($("<p>").text("There are four crystals below. By clicking on a crystal, you will add a specific amount of points to your total score."))
+    flyoutDiv.append($("<p>").text("You win the game by matching your total score to random number, you lose the game if your total score goes above the random number."))
+    flyoutDiv.append($("<p>").text("The value of each crystal is hidden from you until you click on it."))
+    flyoutDiv.append($("<p>").text("Each time when the game starts, the game will change the values of each crystal."))
+    $(".col-title").append(flyoutDiv)
+    console.log("flyout button clicked!")
 })
 
-$(".gem-button-blue").on("click",function(){
-    console.log("Blue Button Clicked!!")
-    calculateUserScore(gemValues.blue)
-})
-
-$(".gem-button-yellow").on("click",function(){
-    console.log("Yellow Button Clicked!!")
-    calculateUserScore(gemValues.yellow)
-})
-
-$(".gem-button-green").on("click",function(){
-    console.log("Green Button Clicked!!")
-    calculateUserScore(gemValues.green)
+$(".button-gem").on("click", function(event){
+    calculateUserScore(gemValues[$(this).val()])
 })
