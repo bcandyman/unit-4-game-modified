@@ -4,76 +4,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Crystals Collector</title>
-
+    <title>Crystal Collector</title>
+    
     <link rel="stylesheet" href="assets/css/reset.css">
+    
 							<!-- Bootstrap CDN -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <script src="https://kit.fontawesome.com/36b5432847.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-
+    <div class="header"></div>
     <div class="container">
-        <div class="row">
-            <div class="col-title col-md-12">
-                <div class="title">
-                    <h1>CrystalsCollector!</h1>
-                </div>
-            </div>
-        </div>
-        <div class="row">
+        <div class="row header-row">
             <div class="col-md-12">
-                    <button id="btn-info-flyout"></button>
-                <!-- <div class="instructions">
-                    <p>You will be given a random number at the start of the game.</p>
-                    <p>There are four crystals below. By clicking on a crystal, you will add a specific amount of points to your total score.</p>
-                    <p>You win the game by matching your total score to random number, you lose the game if your total score goes above the random number.</p>
-                    <p>The value of each crystal is hidden from you until you click on it.</p>
-                    <p>Each time when the game starts, the game will change the values of each crystal.</p>
-                </div> -->
+                    
+                    <h2>Crystal Collector</h2>
+                    
+                    <button id="btn-info-flyout" class="div2">
+                        <i class="far fa-question-circle fa-2x"></i>
+                    </button>
+                
             </div>
         </div>
-
-
-        <div class="row">
-            <div class="col-md-6 col-sm-6">
-                <div class="target">
-                    <h2 id="target"></h2>
+        
+        <div class="row main-content">
+            <div class="col-12">
+                <div class="row wins-losses">
+                    <div class="col-sm-3">
+                        <h6 class="score">Wins:</h6>
+                    </div>
+                    <div class="col-sm-3">
+                        <h4 id="wins"></h4>
+                    </div>
+                    <div class="col-sm-3">
+                        <h6 class="score">Losses:</h6>
+                    </div>
+                    <div class="col-sm-3">
+                        <h4 id="losses"></h4>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-6 col-sm-6">
-                <div class="win-lose-record">
-                    <p>Wins: <span id="wins"></span> </p>
-                    <p>Loses: <span id="loses"></span></p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3 col-sm-6">
-                <button class="button-gem gem-red gem-button-red" value="red"></button>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <button class="button-gem gem-blue gem-button-blue" value="blue"></button>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <button class="button-gem gem-yellow gem-button-yellow" value="yellow"></button>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <button class="button-gem gem-green gem-button-green" value="green"></button>
-            </div>
-        </div>
 
-        <div class="row">
-            <div class="col-md-12">
-                <div class="score score-note">
-                    Your total score is:
+                <hr>
+
+                <div class="row">
+                    <div class="col-3">
+                        <h6 class="score">Target Score:</h6>
+                    </div>
+                    <div class="col-3">
+                        <h2 id="target">0</h2>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <h2 class="score score-total"></h2>
-                <!-- <div class="score score-total"></div> -->
+                
+                <div class="row">
+                    <div class="col-3">
+                            <h6 class="score">Score:</h6>
+                        </div>
+                        <div class="col-3">
+                            <h2 id="userScore">0</h2>
+                        </div>
+                </div>
+
+                <div class="row button-row">
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-xs-3 col-sm-6 button-subrow">
+                                <button class="button-gem gem-red gem-button-red" value="red"></button>
+                                <button class="button-gem gem-blue gem-button-blue" value="blue"></button>
+                            </div>
+                            <div class="col-xs-3 col-sm-6 button-subrow">
+                                <button class="button-gem gem-yellow gem-button-yellow" value="yellow"></button>
+                                <button class="button-gem gem-green gem-button-green" value="green"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
