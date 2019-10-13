@@ -84,11 +84,11 @@ $("#btn-info-flyout").on("click", function(){
         flyoutDiv.addClass("flyout")
         flyoutDiv.html($("<H3>").text("Help"))
         flyoutDiv.append($("<hr />"))
-        flyoutDiv.append($("<p>").text("You will be given a random number at the start of the game."))
-        flyoutDiv.append($("<p>").text("There are four crystals below. By clicking on a crystal, you will add a specific amount of points to your total score."))
-        flyoutDiv.append($("<p>").text("You win the game by matching your total score to random number, you lose the game if your total score goes above the random number."))
-        flyoutDiv.append($("<p>").text("The value of each crystal is hidden from you until you click on it."))
-        flyoutDiv.append($("<p>").text("Each time when the game starts, the game will change the values of each crystal."))
+        flyoutDiv.append($("<p>").text("You will be given a random target value at the start of the game."))
+        flyoutDiv.append($("<p>").text("There are four crystals below. By clicking on a crystal, you will add a specific amount of points to your score."))
+        flyoutDiv.append($("<p>").text("You win the game by matching the Score value to the Target value, you lose the game if your Score value exceeds the Target value."))
+        flyoutDiv.append($("<p>").text("The value of each crystal is hidden from you, so it is up to you to determine their values upon selection."))
+        flyoutDiv.append($("<p>").text("Each time when the game starts, the game will change the Target as well as the values of each crystal."))
         $(".header-row").append(flyoutDiv)
         isFlyOutActive = true;
     }
