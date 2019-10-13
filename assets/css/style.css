@@ -1,15 +1,68 @@
-body{
-    background-image: url("../images/subtle_orange_emboss.png");
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-weight: bold;
+button:focus{
+    outline: none;  
 }
 
-.row{
-    margin-bottom: 10px;
+button:hover{
+    cursor: pointer; 
+}
+
+.button-gem:active{
+    box-shadow: 5px 10px 8px #ccc inset;
+}
+
+.button-gem:hover{
+    box-shadow: 5px 10px 8px #ccc;
+}
+
+.fa-question-circle:hover{
+    color:#35A007;
+}
+
+#btn-info-flyout{
+    float: right;
+    margin-top: 2px;
+}
+
+.button-gem{
+    background-color: white;
+    border: #35A007 1px solid;
+    border-radius: 8px;
+    height: 100px;
+    width: 100px;
+    margin: 7px;
+}
+
+.button-row{
+    margin: 10px 0px;
+}
+
+
+.button-subrow{
+    padding: 0px 0px;
 }
 
 .container{
     max-width: 500px;
+    position: relative;
+    bottom: 73px;
+}
+
+.fa-question-circle{
+    color: #F2FEED;
+}
+
+.flyout{
+    background-color: #F2FEED;
+    border-radius: 10px;
+    color: #35A007;
+    position: absolute;
+    max-width: 400px;
+    top: 80px;
+    z-index: 1;
+    border: 1px solid;
+    padding: 10px;
+    margin: 0 50px;
+    box-shadow: 5px 10px 8px #888;
 }
 
 .gem-blue{
@@ -24,59 +77,52 @@ body{
     background-image: url("../images/gem-red.png")
 }
 
-.gem-tile{
-    background-color: white;
-    height: 100px;
-    width: 100px;
-}
-
 .gem-yellow{
     background-image: url("../images/gem-yellow.png")
 }
 
-.instructions{
-    background-color: bisque;
-    color: green;
-    padding: 30px 10px 50px 10px;
+.header{
+    background-color: #75C753;
+    border-bottom: 3px solid #35A007;
+    height: 70px;
+}
+
+.header-row{
+    background-color: #75C753;
+    border-bottom: 3px solid #35A007;
+    color: #F2FEED;
+    padding: 15px 0px;
+}
+
+.header-row h2{
+    display: inline-block;
+    margin: 0px;
+}
+
+.main-content{
+    background-color: #F2FEED;
+    border: #75C753 solid 1px;
+    border-radius: 10px;
+    color:#35A007;
+    margin-top: 20px;
+    padding-top: 15px;
 }
 
 .score{
-    background-color: lightseagreen;
-    color: white;
-    width: 250px;
+    padding-right: 10px;
 }
 
-.score-note{
-    padding: 0px 10px;
+body{
+    background-image: url("../images/subtle_orange_emboss.png");
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.score-total{
-    height: 125px;
-    padding: 0px 10px;
+button{
+    background:transparent;
+    border: 0px;
 }
 
-.target{
-    background-color: mediumseagreen;
-    color: rebeccapurple;
-    display: inline-block;
-    height: 125px;
-    padding: 0px 10px;
-    width: 250px;
-}
-
-.title{
-    background-color: orange;
-    display: inline-block;
-    color: white;
-    padding: 20px 10px;
-}
-
-.win-lose-record{
-    background-color: aqua;
-    color: teal;
-    display: inline-block;
-    height: 125px;
-    margin-left: 10px;
-    padding: 20px 10px 0 10px;
-    width: 100px;
+hr{
+    border-top: 1px solid #C8F5B5;
+    padding-bottom: 20px;
 }
