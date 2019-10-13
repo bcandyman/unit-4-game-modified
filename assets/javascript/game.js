@@ -1,7 +1,9 @@
-var loses = 0;
+var losses = 0;
+var isFlyOutActive = false;
 var targetScore = 0;
 var userScore = 0;
 var wins = 0;
+var gameOverTimeout
 var gemValues = {
     "red" : 0,
     "blue" : 0,
@@ -25,52 +27,78 @@ function randomizeGemValues(min, max){
 }
 
 //This function adds the value of the gem button pressed to the total score.
-//This function determines if the player wins or loses.
+//This function determines if the player wins or losses.
 function calculateUserScore(value){
+    clearTimeout(gameOverTimeout)
     userScore+= value
-    $(".score-total").text(userScore)
+    console.log(userScore)
+    $("#userScore").text(userScore)
     if(userScore===targetScore){
         wins++
         $("#wins").text(wins)
         reset()
     }
     else if(userScore > targetScore){
-        loses++
-        $("#loses").text(loses)
+        losses++
+        $("#losses").text(losses)
         reset()
+    }
+}
+
+//This function closes the flyout
+//This is called if the document is clicked on while the flyout it open
+function closeFlyout(){
+    if (isFlyOutActive){
+        $("#flyoutInstructions").remove()
+        isFlyOutActive = false;
     }
 }
 
 //This function reset the document after each round played.
 function reset(){
-    targetScore = getRandomNumberBetween(19,120);
-    randomizeGemValues(1, 12);
-    userScore = 0;
-    $("#target").text(targetScore);
-    $(".score-total").text(0)
+    gameOverTimeout = setTimeout(function(){
+        targetScore = getRandomNumberBetween(19,120);
+        randomizeGemValues(1, 12);
+        userScore = 0;
+        $("#target").text(targetScore);
+        $("#userScore").text(0)
+    }, 1000);
 }
 
 
 ///////////Main///////////
-//This area is initializing the game upon loading.
-loses = 0;
+//This area is initializing the document and variables upon loading.
+losses = 0;
 wins = 0;
 reset()
 $("#wins").text(wins);
-$("#loses").text(loses);
+$("#losses").text(losses);
 
 
 ///////////Event Handling//////////
 $("#btn-info-flyout").on("click", function(){
-    var flyoutDiv = $("<div>")
-    flyoutDiv.addClass("flyout instructions")
-    flyoutDiv.html($("<p>").text("You will be given a random number at the start of the game."))
-    flyoutDiv.append($("<p>").text("There are four crystals below. By clicking on a crystal, you will add a specific amount of points to your total score."))
-    flyoutDiv.append($("<p>").text("You win the game by matching your total score to random number, you lose the game if your total score goes above the random number."))
-    flyoutDiv.append($("<p>").text("The value of each crystal is hidden from you until you click on it."))
-    flyoutDiv.append($("<p>").text("Each time when the game starts, the game will change the values of each crystal."))
-    $(".col-title").append(flyoutDiv)
-    console.log("flyout button clicked!")
+    event.stopPropagation()
+    if(!isFlyOutActive){
+        var flyoutDiv = $("<div>")
+        flyoutDiv.attr("id","flyoutInstructions")
+        flyoutDiv.addClass("flyout")
+        flyoutDiv.html($("<H3>").text("Help"))
+        flyoutDiv.append($("<hr />"))
+        flyoutDiv.append($("<p>").text("You will be given a random number at the start of the game."))
+        flyoutDiv.append($("<p>").text("There are four crystals below. By clicking on a crystal, you will add a specific amount of points to your total score."))
+        flyoutDiv.append($("<p>").text("You win the game by matching your total score to random number, you lose the game if your total score goes above the random number."))
+        flyoutDiv.append($("<p>").text("The value of each crystal is hidden from you until you click on it."))
+        flyoutDiv.append($("<p>").text("Each time when the game starts, the game will change the values of each crystal."))
+        $(".header-row").append(flyoutDiv)
+        isFlyOutActive = true;
+    }
+    else{
+        closeFlyout()
+    }
+})
+
+$("body").on("click",function(event){
+    closeFlyout()
 })
 
 $(".button-gem").on("click", function(event){
